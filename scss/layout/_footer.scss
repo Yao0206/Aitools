@@ -1,0 +1,44 @@
+.sitemap {
+    &-logo {
+      max-width: 245px;
+    }
+  }
+  @media (max-width: 768px) {
+    .sitemap {
+      flex-direction: column;
+      &-logo {
+        order: 1;
+        margin-bottom: 40px;
+      }
+      &-list {
+        order: 2;
+      }
+    }
+  }
+  .footer {
+    .copyright {
+      padding: 12px 80px 12px 0;
+      margin-right: 20px;
+    }
+    .social {
+      li {
+        padding: 12px 0;
+        margin-right: 20px;
+      }
+    }
+    .backToTop {
+      padding: 12px 0;
+    }
+  }
+  @media (max-width: 768px) {
+    .footer {
+      position: relative;
+      &-left {
+        flex-direction: column;
+      }
+      .backToTop {
+        position: absolute;
+        right: 0;
+      }
+    }
+  }

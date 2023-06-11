@@ -1,0 +1,44 @@
+
+// 全站樣式
+img {
+  max-width: 100%;
+  height: auto;
+}
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  background-color: $bg-color;
+}
+ul {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+li {
+  list-style-type: none;
+}
+a {
+  display: inline-block;
+  color: $black-0;
+  text-decoration: none;
+  &:hover {
+    color: $black-40;
+  }
+}
+p {
+  color: $black-20;
+  margin-bottom: 0;
+  text-align: justify;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $black-0;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+.container {
+  max-width: 1296px;
+ 
+}

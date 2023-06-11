@@ -1,0 +1,269 @@
+// banner
+.price-banner {
+    padding-top: 40px;
+    h3 {
+      font-size: $font-6m;
+    }
+    h4 {
+      width: 50%;
+      font-size: $font-3s;
+      margin-top: 80px;
+    }
+    .deco {
+      margin-top: 238px;
+    }
+  }
+  @media (max-width: 768px) {
+    .price-banner {
+      h3 {
+        font-size: $font-3s;
+      }
+      h4 {
+        width: 68%;
+        font-size: $font-l;
+        margin-top: 64px;
+        text-align: justify;
+      }
+      .deco {
+        margin-top: 258px;
+        align-self: center !important;
+        text-align: center;
+        img {
+          max-width: 32%;
+        }
+      }
+    }
+  }
+  .price {
+    margin-top: 160px;
+    h2 {
+      font-size: $font-2s;
+    }
+    &-list {
+      margin-top: 80px;
+      &-border {
+        border: 1px solid $black-80;
+        border-radius: $rounded-s;
+        min-height: 318px;
+        &:hover {
+          animation-name: border;
+          animation-duration: 2s;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+        }
+      }
+      &-person {
+        padding: 20px 0 0 32px;
+        h3 {
+          font-size: $font-2s;
+        }
+        ul {
+          margin-top: 12px;
+          padding-left: 24px;
+          li {
+            list-style-type: none;
+            color: $black-20;
+            font-size: $font-s;
+            position: relative;
+            &::before {
+              content: "";
+              display: inline-block;
+              width: 3px;
+              height: 3px;
+              position: absolute;
+              top: 50%;
+              left: -12px;
+              transform: translate(0, -50%);
+              background: $black-20;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+      &-price {
+        border-top: 1px solid $black-80;
+        padding: 20px 24px 20px 32px;
+        font-size: $font-m;
+        p {
+          color: $black-0;
+          font-weight: 900;
+          line-height: 1.2;
+        }
+        span {
+          color: $black-60;
+          font-weight: normal;
+        }
+        a {
+          font-size: $font-s;
+          font-weight: 700;
+        }
+        img {
+          width: 16px;
+          height: 16px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  @keyframes border {
+    0% {
+      border-top: 1px solid $black-0;
+    }
+    25% {
+      border-right: 1px solid $black-0;
+      border-top: 1px solid $black-0;
+    }
+    50% {
+      border-bottom: 1px solid $black-0;
+      border-right: 1px solid $black-0;
+      border-top: 1px solid $black-0;
+    }
+    100% {
+      border: 1px solid $black-0;
+    }
+  }
+  @media (max-width: 768px) {
+    .price {
+      margin-top: 120px;
+      h2 {
+        font-size: $font-m;
+      }
+      &-list {
+        margin-top: 24px;
+        --bs-gutter-y: 0.75rem;
+        &-border {
+          min-height: 240px;
+        }
+        &-person {
+          padding-left: 20px;
+        }
+        &-price {
+          padding-right: 24px;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+  
+  // rules
+  .rules {
+    margin-top: 160px;
+    h2 {
+      font-size: $font-2s;
+    }
+    li {
+      margin-bottom: 40px;
+      border-bottom: 1px solid $black-80;
+      &:nth-child(3) {
+        margin-bottom: 0;
+      }
+      h3 {
+        font-size: $font-3s;
+      }
+      p {
+        font-size: $font-2s;
+        line-height: 1.2;
+        padding: 24px 0 40px 0;
+        color: $black-0;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .rules {
+      margin-top: 120px;
+      h2 {
+        font-size: $font-m;
+      }
+      &-list {
+        margin-top: 48px;
+        li {
+          margin-bottom: 20px;
+          h3 {
+            font-size: $font-2s;
+          }
+          p {
+            font-size: $font-s;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+  
+  // question
+  .question {
+    margin-top: 160px;
+    margin-bottom: 160px;
+    h2 {
+      font-size: $font-2s;
+    }
+    &-accordion {
+      &-item {
+        border: 1px solid $black-80;
+        border-radius: $rounded-s;
+        padding: 20px 40px;
+        margin-bottom: 20px;
+        &:nth-child(5) {
+          margin-bottom: 0;
+        }
+        &:hover {
+          animation: border 2s 1 forwards;
+        }
+        &-title {
+          label {
+            display: block;
+            font-size: $font-m;
+            line-height: 1.2;
+            color: $black-0;
+            cursor: pointer;
+            // 放大可點擊的範圍
+            width: 100%;
+          }
+          img {
+            margin-right: 16px;
+          }
+          .question-icon-remove {
+            display: none;
+          }
+        }
+        p {
+          font-size: $font-s;
+          padding-left: 40px;
+          // 預設隱藏
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.7s linear;
+        }
+        input[type="checkbox"] {
+          display: none;
+          // selector ----- elA ~ elB : 接在 A 後面的所有 B（同輩）
+          &:checked ~ p {
+            // 使用auto自動撐高度 或 在p標籤上面用display:block/none切換顯示 無法套用transition效果
+            max-height: 500px;
+            padding-top: 15px;
+          }
+          &:checked ~ .question-accordion-item-title .question-icon-add {
+            display: none;
+          }
+          &:checked ~ .question-accordion-item-title .question-icon-remove {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .question {
+      margin-top: 120px;
+      margin-bottom: 120px;
+      h2 {
+        font-size: $font-m;
+      }
+      &-accordion {
+        margin-top: 24px;
+        &-item {
+          padding: 20px;
+        }
+      }
+    }
+  }

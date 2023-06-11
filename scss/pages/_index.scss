@@ -1,0 +1,161 @@
+// banner
+.fs-lg-7 {
+  @include media-breakpoint-up(lg) {
+    font-size: 7.5rem !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .banner {
+    .deco {
+      // 蓋bs5樣式
+      align-self: center !important;
+      text-align: center;
+      img {
+        max-width: 32%;
+      }
+    }
+  }
+}
+// banner-animation
+.deco {
+  overflow: hidden;
+  .grass1 {
+    position: relative;
+    animation: grass 3s 0.6s infinite;
+  }
+  .grass2 {
+    position: relative;
+    animation: grass 3s 0.3s infinite;
+  }
+  .grass3 {
+    position: relative;
+    animation: grass 3s infinite;
+  }
+}
+
+@keyframes grass {
+  0% {
+    bottom: -180px;
+  }
+  20%,
+  50% {
+    bottom: 0;
+  }
+  70%,
+  100% {
+    bottom: 180px;
+  }
+}
+
+// service
+.fs-lg-1 {
+  @include media-breakpoint-up(lg) {
+    font-size: $h1-font-size !important;
+  }
+}
+.fs-lg-3 {
+  @include media-breakpoint-up(lg) {
+    font-size: $h3-font-size !important;
+  }
+}
+
+// partner
+.partner {
+  img {
+    width: 160px;  
+  }
+ 
+}
+
+// recommend
+.recommend,
+.recommend-rwd {
+ 
+  &-bg {
+    background: rgba(255, 255, 255, 0.08);
+  }
+  
+}
+.recommend-rwd {
+  display: none;
+}
+.recommend-slides {
+  animation-name: scale;
+  animation-duration: 0.5s;
+}
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.99);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media (max-width: 768px) {
+  .recommend {
+   
+    display: none;
+    &-rwd {   
+      display: block;
+      position: relative;
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 120px 15px;
+      }
+      .next {
+        right: 0%;
+      }
+      &-dots {
+        
+        .dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: $black-80;
+          margin: 0 4px;
+          &:hover {
+            width: 12px;
+            height: 12px;
+            background: $black-0;
+          }
+        }
+        .active {
+          width: 12px;
+          height: 12px;
+          background: $black-0;
+        }
+      }
+    }
+  }
+}
+
+// callToAction
+.fs-lg-1 {
+  @include media-breakpoint-up(lg) {
+    font-size: $h1-font-size !important;
+  }
+}
+.callToAction {
+  h3 {
+    br {
+      display: none;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .callToAction {
+    h3 {
+      br {
+        display: block;
+      }
+    }
+  }
+}
